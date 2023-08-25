@@ -1,0 +1,14 @@
+import spa.*
+import personas.* //se importa porque dentro del metodo de spa utilizamos a un objeto de personas
+
+test "Olivia se da banio de vapor" {
+	spa.atender(olivia)
+	assert.equals(9, olivia.gradoDeConcentracion())
+}
+
+test "Ramiro luego de un dia de trabajo queda con la piel grasosa" {
+	ramiro.diaDeTrabajo()
+	assert.that(ramiro.tienePielGrasosa())
+	spa.atender(ramiro)
+	assert.notThat(ramiro.tienePielGrasosa())
+}

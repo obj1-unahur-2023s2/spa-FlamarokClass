@@ -1,0 +1,37 @@
+import personas.*
+
+/*
+ * EJ:
+test "assert esta OK si assert.taht(true)" {
+	assert.that(true)
+}
+
+test "assert esta bien si assert.notThat(false)" {
+	assert.notThat(false)
+}
+
+
+test "assert con equals" {
+	assert.equals(5,2+3 )
+}
+
+*/
+
+
+test "Olivia nace con concetracion = 6" {
+
+	assert.equals(6,olivia.gradoDeConcentracion())
+
+}
+
+test "Bruno tiene sed" {
+	
+	assert.notThat(bruno.tieneSed()) //tieneSed esperamos un false para que NotThat quede bien
+}
+
+test "Bruno queda con 54500 de peso y sed, luego de banio vapor" {
+	bruno.darseBanioDeVapor() // se realiza este paso para "inicializar" los valores
+	assert.equals(54500,bruno.peso())
+	assert.that(bruno.tieneSed()) // no es buena practica meter mas de un test por consulta
+}
+

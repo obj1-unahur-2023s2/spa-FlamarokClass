@@ -5,13 +5,15 @@ object olivia {
 	method gradoDeConcentracion() = gradoDeConcentracion
 	
 	
-	method recibirMasajes() {
+	method recibirMasaje() {
 		gradoDeConcentracion += 3
 	}
 	
 	method discutir() {
 		gradoDeConcentracion -= 1
 	}
+	
+	method darseBanioDeVapor() {}
 }
 
 
@@ -54,7 +56,7 @@ object bruno {
 		return self.esFeliz() and not self.tieneSed() and peso.between(50000,70000)
 	}
 	
-	/*
+	/* es igual pero redactado de otra manera
 	method estaPerfecto() {
 		return esFeliz() and not tieneSed() and peso.between(50000,70000)
 	}
@@ -69,14 +71,19 @@ object bruno {
 }
 
 object ramiro {
+	/* 
+		contracturado: si no lo inicializamos comenzara con un null y romperá cuando lo modifique la ejecucion de un metodo. Ademas no tenemos un setter.
+		Lo mismo ocurre con tienePielGrasosa, no importa el valor, pero no te	 
+	*/	
+	
 	var contracturado = 0
-	var tienePielGrasosa 
+	var tienePielGrasosa = true
 	
 	method contracturado() = contracturado
 	method tienePielGrasosa() = tienePielGrasosa
 	
 	method recibirMasaje() {
-		contracturado = 0.max(contracturado - 1)
+		contracturado = 0.max(contracturado - 2)
 	}
 	
 	method darseBanioDeVapor() {
